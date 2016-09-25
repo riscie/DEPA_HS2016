@@ -2,6 +2,7 @@ package ColorPicker;
 
 import ColorPicker.Buttons.Buttons;
 import ColorPicker.ColorBox.ColorBox;
+import ColorPicker.Menu.Menu;
 import ColorPicker.RadioButtons.RadioButtons;
 import ColorPicker.Sliders.Sliders;
 import javafx.application.Application;
@@ -13,7 +14,15 @@ public class Main extends Application {
 
     @Override
     public void start(Stage mainStage) {
+        //Constants
+        int WIDTH = 300;
+        int HEIGHT = 320;
+
+        //ColorModel
         ColorModel colorModel = new ColorModel();
+
+        //UI Components
+        Menu menu = new Menu(colorModel);
         Sliders sliders = new Sliders(colorModel);
         ColorBox colorBox = new ColorBox(colorModel);
         RadioButtons radioButtons = new RadioButtons(colorModel);
@@ -21,17 +30,17 @@ public class Main extends Application {
 
         //Whole Pane
         FlowPane whole = new FlowPane();
-        whole.getChildren().addAll(sliders, colorBox, radioButtons, buttons);
+        whole.getChildren().addAll(menu, sliders, colorBox, radioButtons, buttons);
 
         mainStage.setScene(new Scene(whole));
         mainStage.setTitle("DEPA ColorPicker");
-        mainStage.setWidth(300);
-        mainStage.setHeight(300);
+        mainStage.setWidth(WIDTH);
+        mainStage.setHeight(HEIGHT);
         //Prevents resizing
-        mainStage.setMaxWidth(300);
-        mainStage.setMaxHeight(300);
-        mainStage.setMinWidth(300);
-        mainStage.setMinHeight(300);
+        mainStage.setMaxWidth(WIDTH);
+        mainStage.setMaxHeight(HEIGHT);
+        mainStage.setMinWidth(WIDTH);
+        mainStage.setMinHeight(HEIGHT);
 
         mainStage.show();
 
