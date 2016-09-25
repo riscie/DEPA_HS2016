@@ -15,9 +15,9 @@
             <TextField fx:id="gDec" editable="false" layoutX="153.0" layoutY="37.0" prefHeight="25.0" prefWidth="34.0" text="0" />
             <Slider fx:id="b" layoutX="5.0" layoutY="72.0" max="255.0" style="-fx-background-color: blue;" />
             <TextField fx:id="bDec" editable="false" layoutX="153.0" layoutY="66.0" prefHeight="25.0" prefWidth="34.0" text="0" />
-            <TextField fx:id="rHex" editable="false" layoutX="190.0" layoutY="9.0" prefHeight="25.0" prefWidth="43.0" text="0x00" />
-            <TextField fx:id="gHex" editable="false" layoutX="190.0" layoutY="37.0" prefHeight="25.0" prefWidth="43.0" text="0x00" />
-            <TextField fx:id="bHex" editable="false" layoutX="190.0" layoutY="66.0" prefHeight="25.0" prefWidth="43.0" text="0x00" />
+            <TextField fx:id="rHex" editable="false" layoutX="190.0" layoutY="9.0" prefHeight="25.0" prefWidth="43.0" text="0x0" />
+            <TextField fx:id="gHex" editable="false" layoutX="190.0" layoutY="37.0" prefHeight="25.0" prefWidth="43.0" text="0x0" />
+            <TextField fx:id="bHex" editable="false" layoutX="190.0" layoutY="66.0" prefHeight="25.0" prefWidth="43.0" text="0x0" />
         </children>
     </AnchorPane>
 </fx:root>
