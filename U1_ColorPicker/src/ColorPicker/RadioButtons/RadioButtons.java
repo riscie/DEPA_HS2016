@@ -74,40 +74,45 @@ public class RadioButtons extends VBox implements Observer {
 
     @Override
     public void update(int r, int g, int b) {
-        if (r == 255 && g == 0 && b == 0) {
+        if (r == 255 && g == 0 && b == 0){
             preventUpdate = true;
             red.setSelected(true);
             preventUpdate = false;
         }
-        if (r == 0 && g == 0 && b == 255) {
+        else if (r == 0 && g == 0 && b == 255){
             preventUpdate = true;
             blue.setSelected(true);
             preventUpdate = false;
         }
-        if (r == 0 && g == 255 && b == 0) {
+        else if (r == 0 && g == 255 && b == 0){
             preventUpdate = true;
             green.setSelected(true);
             preventUpdate = false;
         }
-        if (r == 255 && g == 255 && b == 0) {
+        else if (r == 255 && g == 255 && b == 0){
             preventUpdate = true;
             yellow.setSelected(true);
             preventUpdate = false;
         }
-        if (r == 0 && g == 255 && b == 255) {
+        else if (r == 0 && g == 255 && b == 255){
             preventUpdate = true;
             cyan.setSelected(true);
             preventUpdate = false;
         }
-        if (r == 255 && g == 200 && b == 0) {
+        else if (r == 255 && g == 200 && b == 0){
             preventUpdate = true;
             orange.setSelected(true);
             preventUpdate = false;
         }
-        if (r == 0 && g == 0 && b == 0) {
+        else if (r == 0 && g == 0 && b == 0){
             preventUpdate = true;
             black.setSelected(true);
             preventUpdate = false;
+        }
+        else {
+            Toggle selected = group.getSelectedToggle();
+            if (selected != null)
+                selected.setSelected(false);
         }
     }
 }
