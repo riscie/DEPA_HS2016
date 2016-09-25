@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>ColorPicker.Main</OriginalElement>
+  <nodes>
+    <node x="0.0" y="609.0">ColorPicker.Buttons.Buttons</node>
+    <node x="623.9307692307692" y="875.0">ColorPicker.Main</node>
+    <node x="699.8903846153846" y="22.0">ColorPicker.Observer</node>
+    <node x="386.276923076923" y="0.0">ColorPicker.Observable</node>
+    <node x="260.0" y="521.0">ColorPicker.Sliders.Sliders</node>
+    <node x="1081.0" y="609.0">ColorPicker.ColorBox.ColorBox</node>
+    <node x="457.0" y="155.0">ColorPicker.ColorModel</node>
+    <node x="681.0" y="532.0">ColorPicker.RadioButtons.RadioButtons</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ColorPicker.Main" target="ColorPicker.RadioButtons.RadioButtons">
+      <point x="31.799999999999955" y="-36.5" />
+      <point x="735.2307692307692" y="845.0" />
+      <point x="871.0" y="845.0" />
+      <point x="0.0" y="136.0" />
+    </edge>
+    <edge source="ColorPicker.Main" target="ColorPicker.Buttons.Buttons">
+      <point x="-63.60000000000002" y="-36.5" />
+      <point x="639.8307692307692" y="855.0" />
+      <point x="120.0" y="855.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="ColorPicker.Main" target="ColorPicker.ColorBox.ColorBox">
+      <point x="63.60000000000002" y="-36.5" />
+      <point x="767.0307692307692" y="855.0" />
+      <point x="1201.0" y="855.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="ColorPicker.Buttons.Buttons" target="ColorPicker.ColorModel">
+      <point x="60.0" y="-59.0" />
+      <point x="180.0" y="496.0" />
+      <point x="499.70000000000005" y="496.0" />
+      <point x="-170.8" y="158.0" />
+    </edge>
+    <edge source="ColorPicker.ColorModel" target="ColorPicker.Observable">
+      <point x="-106.75" y="-158.0" />
+      <point x="563.75" y="115.0" />
+      <point x="516.276923076923" y="115.0" />
+      <point x="0.0" y="47.5" />
+    </edge>
+    <edge source="ColorPicker.ColorBox.ColorBox" target="ColorPicker.ColorModel">
+      <point x="-60.0" y="-59.0" />
+      <point x="1141.0" y="496.0" />
+      <point x="841.3" y="496.0" />
+      <point x="170.79999999999995" y="158.0" />
+    </edge>
+    <edge source="ColorPicker.Sliders.Sliders" target="ColorPicker.Observer">
+      <point x="-100.0" y="-147.0" />
+      <point x="360.0" y="135.0" />
+      <point x="753.2903846153845" y="135.0" />
+      <point x="-35.60000000000002" y="25.5" />
+    </edge>
+    <edge source="ColorPicker.ColorBox.ColorBox" target="ColorPicker.Observer">
+      <point x="60.0" y="-59.0" />
+      <point x="1261.0" y="125.0" />
+      <point x="860.0903846153847" y="125.0" />
+      <point x="71.20000000000005" y="25.5" />
+    </edge>
+    <edge source="ColorPicker.Main" target="ColorPicker.ColorModel">
+      <point x="0.0" y="-36.5" />
+      <point x="703.4307692307692" y="835.0" />
+      <point x="670.5" y="835.0" />
+      <point x="0.0" y="158.0" />
+    </edge>
+    <edge source="ColorPicker.RadioButtons.RadioButtons" target="ColorPicker.ColorModel">
+      <point x="-95.0" y="-136.0" />
+      <point x="776.0" y="496.0" />
+      <point x="755.9" y="496.0" />
+      <point x="85.39999999999998" y="158.0" />
+    </edge>
+    <edge source="ColorPicker.Main" target="ColorPicker.Sliders.Sliders">
+      <point x="-31.799999999999955" y="-36.5" />
+      <point x="671.6307692307693" y="845.0" />
+      <point x="460.0" y="845.0" />
+      <point x="0.0" y="147.0" />
+    </edge>
+    <edge source="ColorPicker.Sliders.Sliders" target="ColorPicker.ColorModel">
+      <point x="100.0" y="-147.0" />
+      <point x="560.0" y="496.0" />
+      <point x="585.1" y="496.0" />
+      <point x="-85.39999999999998" y="158.0" />
+    </edge>
+    <edge source="ColorPicker.Buttons.Buttons" target="ColorPicker.Observer">
+      <point x="-60.0" y="-59.0" />
+      <point x="60.000000000000114" y="125.0" />
+      <point x="717.6903846153846" y="125.0" />
+      <point x="-71.20000000000005" y="25.5" />
+    </edge>
+    <edge source="ColorPicker.RadioButtons.RadioButtons" target="ColorPicker.Observer">
+      <point x="94.99999999999997" y="-136.0" />
+      <point x="966.0" y="135.0" />
+      <point x="824.4903846153845" y="135.0" />
+      <point x="35.60000000000002" y="25.5" />
+    </edge>
+    <edge source="ColorPicker.ColorModel" target="ColorPicker.Observer">
+      <point x="106.75" y="-158.0" />
+      <point x="777.25" y="135.0" />
+      <point x="788.8903846153846" y="135.0" />
+      <point x="0.0" y="25.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="660.5" y="474.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
