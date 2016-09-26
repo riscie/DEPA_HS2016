@@ -14,6 +14,8 @@ import java.io.IOException;
 
 public class Menu extends VBox implements Observer {
     private ColorModel colorModel;
+    private boolean preventUpdate;
+    private ToggleGroup group;
 
     @FXML
     private MenuItem exit;
@@ -32,14 +34,12 @@ public class Menu extends VBox implements Observer {
     @FXML
     private RadioMenuItem black;
 
-    private boolean preventUpdate;
-
-    private ToggleGroup group = new ToggleGroup();
-
 
     public Menu(ColorModel colorModel) {
         this.colorModel = colorModel;
         colorModel.registerObserver(this);
+
+        group = new ToggleGroup();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menu.fxml"));
         fxmlLoader.setRoot(this);
@@ -68,49 +68,39 @@ public class Menu extends VBox implements Observer {
                 colorModel.setColorByName(selectedColor);
             }
         });
-
-
     }
-
 
     @Override
     public void update(int r, int g, int b) {
-        if (r == 255 && g == 0 && b == 0){
+        if (r == 255 && g == 0 && b == 0) {
             preventUpdate = true;
             red.setSelected(true);
             preventUpdate = false;
-        }
-        else if (r == 0 && g == 0 && b == 255){
+        } else if (r == 0 && g == 0 && b == 255) {
             preventUpdate = true;
             blue.setSelected(true);
             preventUpdate = false;
-        }
-        else if (r == 0 && g == 255 && b == 0){
+        } else if (r == 0 && g == 255 && b == 0) {
             preventUpdate = true;
             green.setSelected(true);
             preventUpdate = false;
-        }
-        else if (r == 255 && g == 255 && b == 0){
+        } else if (r == 255 && g == 255 && b == 0) {
             preventUpdate = true;
             yellow.setSelected(true);
             preventUpdate = false;
-        }
-        else if (r == 0 && g == 255 && b == 255){
+        } else if (r == 0 && g == 255 && b == 255) {
             preventUpdate = true;
             cyan.setSelected(true);
             preventUpdate = false;
-        }
-        else if (r == 255 && g == 200 && b == 0){
+        } else if (r == 255 && g == 200 && b == 0) {
             preventUpdate = true;
             orange.setSelected(true);
             preventUpdate = false;
-        }
-        else if (r == 0 && g == 0 && b == 0){
+        } else if (r == 0 && g == 0 && b == 0) {
             preventUpdate = true;
             black.setSelected(true);
             preventUpdate = false;
-        }
-        else {
+        } else {
             Toggle selected = group.getSelectedToggle();
             if (selected != null)
                 selected.setSelected(false);

@@ -48,14 +48,6 @@ public class ColorModel implements Observable {
         notifyObservers();
     }
 
-    public void makeDarker() {
-        java.awt.Color tmpColor = new java.awt.Color(r, g, b).darker();
-        r = tmpColor.getRed();
-        g = tmpColor.getGreen();
-        b = tmpColor.getBlue();
-        notifyObservers();
-    }
-
     public void setColorByName(String selectedColor) {
         java.awt.Color tmpColor = new java.awt.Color(0, 0, 0);
         switch (selectedColor) {
@@ -86,6 +78,14 @@ public class ColorModel implements Observable {
         b = tmpColor.getBlue();
         notifyObservers();
 
+    }
+
+    public void makeDarker() {
+        java.awt.Color tmpColor = new java.awt.Color(r, g, b).darker();
+        r = tmpColor.getRed();
+        g = tmpColor.getGreen();
+        b = tmpColor.getBlue();
+        notifyObservers();
     }
 
     public void makeBrighter() {

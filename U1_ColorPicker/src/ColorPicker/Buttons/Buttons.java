@@ -14,11 +14,8 @@ public class Buttons extends VBox implements Observer {
 
     @FXML
     private Button darker;
-
     @FXML
     private Button brighter;
-
-
 
     public Buttons(final ColorModel colorModel) {
         this.colorModel = colorModel;
@@ -33,8 +30,8 @@ public class Buttons extends VBox implements Observer {
             throw new RuntimeException(exception);
         }
 
+        //Action Listeners
         darker.setOnAction(event -> colorModel.makeDarker());
-
         brighter.setOnAction(event -> colorModel.makeBrighter());
     }
 

@@ -16,8 +16,6 @@ public class ColorBox extends VBox implements Observer {
     @FXML
     private Rectangle colorBox;
 
-
-
     public ColorBox(ColorModel colorModel) {
         this.colorModel = colorModel;
         colorModel.registerObserver(this);
