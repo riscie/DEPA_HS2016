@@ -2,8 +2,6 @@ package ColorPicker.Buttons;
 
 import ColorPicker.ColorModel;
 import ColorPicker.Observer;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -12,7 +10,7 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 
 public class Buttons extends VBox implements Observer {
-    ColorModel colorModel;
+    private ColorModel colorModel;
 
     @FXML
     private Button darker;
@@ -35,19 +33,9 @@ public class Buttons extends VBox implements Observer {
             throw new RuntimeException(exception);
         }
 
-        darker.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                colorModel.makeDarker();
-            }
-        });
+        darker.setOnAction(event -> colorModel.makeDarker());
 
-        brighter.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                colorModel.makeBrighter();
-            }
-        });
+        brighter.setOnAction(event -> colorModel.makeBrighter());
     }
 
 

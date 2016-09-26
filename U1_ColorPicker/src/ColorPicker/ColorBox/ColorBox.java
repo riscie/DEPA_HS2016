@@ -11,7 +11,7 @@ import javafx.scene.shape.Rectangle;
 import java.io.IOException;
 
 public class ColorBox extends VBox implements Observer {
-    ColorModel colorModel;
+    private ColorModel colorModel;
 
     @FXML
     private Rectangle colorBox;

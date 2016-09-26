@@ -2,8 +2,6 @@ package ColorPicker.Sliders;
 
 import ColorPicker.ColorModel;
 import ColorPicker.Observer;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Slider;
@@ -13,7 +11,7 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 
 public class Sliders extends VBox implements Observer {
-    ColorModel colorModel;
+    private ColorModel colorModel;
 
     //Red
     @FXML
@@ -55,31 +53,13 @@ public class Sliders extends VBox implements Observer {
         }
 
         // Listen for red value changes
-        r.valueProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable,
-                                Number oldValue, Number newValue) {
-                colorModel.updateRed(newValue.intValue());
-            }
-        });
+        r.valueProperty().addListener((observable, oldValue, newValue) -> colorModel.updateRed(newValue.intValue()));
 
         // Listen for red value changes
-        g.valueProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable,
-                                Number oldValue, Number newValue) {
-                colorModel.updateGreen(newValue.intValue());
-            }
-        });
+        g.valueProperty().addListener((observable, oldValue, newValue) -> colorModel.updateGreen(newValue.intValue()));
 
         // Listen for red value changes
-        b.valueProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable,
-                                Number oldValue, Number newValue) {
-                colorModel.updateBlue(newValue.intValue());
-            }
-        });
+        b.valueProperty().addListener((observable, oldValue, newValue) -> colorModel.updateBlue(newValue.intValue()));
     }
 
 

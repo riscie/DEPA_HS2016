@@ -2,10 +2,6 @@ package ColorPicker.Menu;
 
 import ColorPicker.ColorModel;
 import ColorPicker.Observer;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.MenuItem;
@@ -17,7 +13,7 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 
 public class Menu extends VBox implements Observer {
-    ColorModel colorModel;
+    private ColorModel colorModel;
 
     @FXML
     private MenuItem exit;
@@ -36,9 +32,9 @@ public class Menu extends VBox implements Observer {
     @FXML
     private RadioMenuItem black;
 
-    boolean preventUpdate;
+    private boolean preventUpdate;
 
-    ToggleGroup group = new ToggleGroup();
+    private ToggleGroup group = new ToggleGroup();
 
 
     public Menu(ColorModel colorModel) {
@@ -54,11 +50,7 @@ public class Menu extends VBox implements Observer {
             throw new RuntimeException(exception);
         }
 
-        exit.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent t) {
-                System.exit(0);
-            }
-        });
+        exit.setOnAction(t -> System.exit(0));
 
         //Adding Radios to group
         red.setToggleGroup(group);
@@ -70,12 +62,10 @@ public class Menu extends VBox implements Observer {
         black.setToggleGroup(group);
 
 
-        group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-            public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
-                if (group.getSelectedToggle() != null && !preventUpdate) {
-                    String selectedColor = group.getSelectedToggle().getUserData().toString();
-                    colorModel.setColorByName(selectedColor);
-                }
+        group.selectedToggleProperty().addListener((ov, old_toggle, new_toggle) -> {
+            if (group.getSelectedToggle() != null && !preventUpdate) {
+                String selectedColor = group.getSelectedToggle().getUserData().toString();
+                colorModel.setColorByName(selectedColor);
             }
         });
 

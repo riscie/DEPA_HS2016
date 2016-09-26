@@ -2,9 +2,6 @@ package ColorPicker.RadioButtons;
 
 import ColorPicker.ColorModel;
 import ColorPicker.Observer;
-
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.RadioButton;
@@ -15,9 +12,9 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 
 public class RadioButtons extends VBox implements Observer {
-    ColorModel colorModel;
+    private ColorModel colorModel;
 
-    ToggleGroup group = new ToggleGroup();
+    private ToggleGroup group = new ToggleGroup();
     @FXML
     private RadioButton red;
     @FXML
@@ -33,7 +30,7 @@ public class RadioButtons extends VBox implements Observer {
     @FXML
     private RadioButton black;
 
-    boolean preventUpdate;
+    private boolean preventUpdate;
 
 
     public RadioButtons(final ColorModel colorModel) {
@@ -59,15 +56,13 @@ public class RadioButtons extends VBox implements Observer {
         black.setToggleGroup(group);
 
 
-        group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-            public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
-                if (group.getSelectedToggle() != null && !preventUpdate) {
-                    String selectedColor = group.getSelectedToggle().getUserData().toString();
-                    colorModel.setColorByName(selectedColor);
-
-                }
+        group.selectedToggleProperty().addListener((ov, old_toggle, new_toggle) -> {
+            if (group.getSelectedToggle() != null && !preventUpdate) {
+                String selectedColor = group.getSelectedToggle().getUserData().toString();
+                colorModel.setColorByName(selectedColor);
 
             }
+
         });
 
     }
