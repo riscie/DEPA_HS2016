@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<fx:root type="javafx.scene.layout.VBox" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="152.0" prefWidth="76.0">
+         <children>
+            <RadioButton fx:id="red" layoutX="10.0" mnemonicParsing="false" text="red" userData="red" />
+            <RadioButton fx:id="blue" layoutX="10.0" layoutY="21.0" mnemonicParsing="false" text="blue" userData="blue" />
+            <RadioButton fx:id="green" layoutX="10.0" layoutY="43.0" mnemonicParsing="false" text="green" userData="green" />
+            <RadioButton fx:id="yellow" layoutX="10.0" layoutY="65.0" mnemonicParsing="false" text="yellow" userData="yellow" />
+            <RadioButton fx:id="cyan" layoutX="10.0" layoutY="87.0" mnemonicParsing="false" text="cyan" userData="cyan" />
+            <RadioButton fx:id="orange" layoutX="10.0" layoutY="109.0" mnemonicParsing="false" text="orange" userData="orange" />
+            <RadioButton fx:id="black" layoutX="10.0" layoutY="131.0" mnemonicParsing="false" selected="true" text="black" userData="black" />
+         </children>
+      </AnchorPane>
+   </children>
+</fx:root>

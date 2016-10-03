@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<fx:root type="javafx.scene.layout.VBox" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <AnchorPane prefHeight="90.0" prefWidth="95.0">
+      <children>
+          <Rectangle fx:id="colorBox" fill="#000000" height="90.0" layoutX="6.0" layoutY="1.0" stroke="BLACK" width="90.0" />
+      </children>
+   </AnchorPane>
+</fx:root>

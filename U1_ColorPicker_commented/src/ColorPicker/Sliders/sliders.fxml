@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<fx:root type="javafx.scene.layout.VBox" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="99.0" prefWidth="242.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+        <children>
+            <Slider layoutX="-198.0" layoutY="21.0" prefHeight="14.0" prefWidth="137.0" />
+            <Slider fx:id="r" layoutX="5.0" layoutY="14.0" max="255.0" style="-fx-background-color: red;" />
+            <TextField fx:id="rDec" editable="false" layoutX="153.0" layoutY="9.0" prefHeight="25.0" prefWidth="34.0" text="0" />
+            <Slider fx:id="g" layoutX="5.0" layoutY="43.0" max="255.0" style="-fx-background-color: green;" />
+            <TextField fx:id="gDec" editable="false" layoutX="153.0" layoutY="37.0" prefHeight="25.0" prefWidth="34.0" text="0" />
+            <Slider fx:id="b" layoutX="5.0" layoutY="72.0" max="255.0" style="-fx-background-color: blue;" />
+            <TextField fx:id="bDec" editable="false" layoutX="153.0" layoutY="66.0" prefHeight="25.0" prefWidth="34.0" text="0" />
+            <TextField fx:id="rHex" editable="false" layoutX="190.0" layoutY="9.0" prefHeight="25.0" prefWidth="43.0" text="0x0" />
+            <TextField fx:id="gHex" editable="false" layoutX="190.0" layoutY="37.0" prefHeight="25.0" prefWidth="43.0" text="0x0" />
+            <TextField fx:id="bHex" editable="false" layoutX="190.0" layoutY="66.0" prefHeight="25.0" prefWidth="43.0" text="0x0" />
+        </children>
+    </AnchorPane>
+</fx:root>
