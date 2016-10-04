@@ -8,13 +8,11 @@ public class Test {
 		final ColorModel model = new ColorModel(Color.black);
 		final RedScrollbar sb = new RedScrollbar(model);
 		
-		sb.addObserver(new Observer(){
-			@Override
-			public void update(Observable source, Object arg) {
-				System.out.println("someone changed the scrollbar value => adjust the color model");
-				Color current = model.getColor();
-				model.setColor(new Color((int)arg, current.getGreen(), current.getBlue()));
-			}}
+		sb.addObserver((source, arg) -> {
+            System.out.println("someone changed the scrollbar value => adjust the color model");
+            Color current = model.getColor();
+            model.setColor(new Color((int)arg, current.getGreen(), current.getBlue()));
+        }
 		);
 		
 
@@ -23,7 +21,7 @@ public class Test {
 		System.out.println("scrollbar value = " + sb.getValue());
 		System.out.println();
 		
-		sb.setValue(44);
+		sb.setValue(44, true);
 		System.out.println("model red value = " + model.getColor().getRed());
 		System.out.println("scrollbar value = " + sb.getValue());
 	}
