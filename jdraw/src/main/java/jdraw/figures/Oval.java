@@ -17,7 +17,7 @@ public class Oval implements Figure {
         this.oval = new Ellipse2D.Double(x, y, w, h);
         figureListeners = new CopyOnWriteArrayList<>();
     }
-1
+
     private List<FigureListener> figureListeners;
 
     @Override
