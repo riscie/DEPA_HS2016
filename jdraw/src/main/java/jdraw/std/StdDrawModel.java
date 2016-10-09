@@ -47,7 +47,9 @@ public class StdDrawModel implements DrawModel, FigureListener {
     public void removeFigure(Figure f) {
         //remove the figures listeners
         f.removeFigureListener(this);
-        figures.remove(f);
+        if (figures.remove(f)) {
+            notifyObservers(f, DrawModelEvent.Type.FIGURE_REMOVED);
+        }
     }
 
     @Override
@@ -82,8 +84,8 @@ public class StdDrawModel implements DrawModel, FigureListener {
         if (index > figures.size() - 1)
             throw new IndexOutOfBoundsException();
 
-        //Can not set a new index if the list contains only one element (apparently)
-        if (figures.size() <= 1)
+        //Can not change the index for a figure which we don't know about
+        if (!figures.contains(figure))
             throw new IllegalArgumentException();
 
         figures.remove(figure);
