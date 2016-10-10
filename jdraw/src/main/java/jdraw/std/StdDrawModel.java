@@ -15,7 +15,6 @@ import jdraw.framework.*;
  * in a proper way.
  * It is part of the course assignments to do so.
  *
- * @author Matthias Langhard
  */
 public class StdDrawModel implements DrawModel, FigureListener {
     private List<Figure> figures;
@@ -91,7 +90,6 @@ public class StdDrawModel implements DrawModel, FigureListener {
         figures.remove(figure);
         figures.add(index, figure);
         notifyObservers(figure, DrawModelEvent.Type.DRAWING_CHANGED);
-        System.out.println(index);
     }
 
     @Override
