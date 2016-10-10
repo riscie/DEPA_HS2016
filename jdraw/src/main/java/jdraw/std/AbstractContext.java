@@ -287,7 +287,7 @@ public abstract class AbstractContext extends JFrame implements DrawContext {
 			}
 		};
 
-		String name = tool.getName();
+		String name = tool.getToolName();
 		Icon icon = tool.getIcon();
 
 		action.putValue(Action.SMALL_ICON, icon);

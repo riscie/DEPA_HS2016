@@ -20,7 +20,7 @@ public interface DrawToolFactory {
 	/**
 	 * Returns the name of the created tool. If this value is not null, then
 	 * it will overwrite the name of the created tool
-	 * @see DrawTool#getName()
+	 * @see DrawTool#getToolName()
 	 * 
 	 * @return draw tool name
 	 */

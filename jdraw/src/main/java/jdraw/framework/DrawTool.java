@@ -84,5 +84,5 @@ public interface DrawTool {
 	 * 
 	 * @return the tool's name.
 	 */
-	String getName();
+	String getToolName();
 }

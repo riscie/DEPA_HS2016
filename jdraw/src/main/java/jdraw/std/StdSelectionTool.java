@@ -282,8 +282,7 @@ public class StdSelectionTool implements DrawTool {
 		return new ImageIcon(getClass().getResource(IMAGES + "selection.png"));
 	}
 
-	@Override
-	public String getName() {
+	public String getToolName() {
 		return "Selection";
 	}
 }

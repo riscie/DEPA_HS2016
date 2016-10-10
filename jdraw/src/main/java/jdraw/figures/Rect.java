@@ -1,28 +1,15 @@
-/*
- * Copyright (c) 2000-2016 Fachhochschule Nordwestschweiz (FHNW)
- * All Rights Reserved. 
- */
-
 package jdraw.figures;
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
-import jdraw.framework.Figure;
-import jdraw.framework.FigureEvent;
-import jdraw.framework.FigureHandle;
-import jdraw.framework.FigureListener;
 
 /**
  * Represents rectangles in JDraw.
  *
  * @author Christoph Denzler
  */
-public class Rect implements Figure {
+public class Rect extends AbstractFigure {
     /**
      * Use the java.awt.Rectangle in order to save/reuse code.
      */
@@ -38,10 +25,8 @@ public class Rect implements Figure {
      */
     public Rect(int x, int y, int w, int h) {
         rectangle = new java.awt.Rectangle(x, y, w, h);
-        figureListeners = new CopyOnWriteArrayList<>();
     }
 
-    private List<FigureListener> figureListeners;
 
     /**
      * Draw the rectangle to the given graphics context.
@@ -80,38 +65,6 @@ public class Rect implements Figure {
     @Override
     public Rectangle getBounds() {
         return rectangle.getBounds();
-    }
-
-    /**
-     * Returns a list of 8 handles for this Rectangle.
-     *
-     * @return all handles that are attached to the targeted figure.
-     * @see jdraw.framework.Figure#getHandles()
-     */
-    @Override
-    public List<FigureHandle> getHandles() {
-        return null;
-    }
-
-    @Override
-    public void addFigureListener(FigureListener listener) {
-        figureListeners.add(listener);
-    }
-
-    @Override
-    public void removeFigureListener(FigureListener listener) {
-        figureListeners.remove(listener);
-    }
-
-    @Override
-    public Figure clone() {
-        return null;
-    }
-
-    private void notifyObservers() {
-        for (FigureListener figureListener : figureListeners) {
-            figureListener.figureChanged(new FigureEvent(this));
-        }
     }
 
 }

@@ -1,15 +1,9 @@
 package jdraw.figures;
 
-import jdraw.framework.Figure;
-import jdraw.framework.FigureEvent;
-import jdraw.framework.FigureHandle;
-import jdraw.framework.FigureListener;
-
 import java.awt.*;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
-public class Line implements Figure {
+
+public class Line extends AbstractFigure {
     private LineObject line;
 
     private static class LineObject {
@@ -25,18 +19,18 @@ public class Line implements Figure {
             this.y2 = y2;
         }
 
-        public void setByPoints(Point o, Point c) {
+        void setByPoints(Point o, Point c) {
             this.x1 = o.x;
             this.y1 = o.y;
             this.x2 = c.x;
             this.y2 = c.y;
         }
 
-        public Point getP1() {
+        Point getP1() {
             return new Point(x1, y1);
         }
 
-        public Point getP2() {
+        Point getP2() {
             return new Point(x2, y2);
         }
 
@@ -45,11 +39,7 @@ public class Line implements Figure {
 
     public Line(int x1, int y1, int x2, int y2) {
         line = new LineObject(x1, y1, x2, y2);
-        figureListeners = new CopyOnWriteArrayList<>();
     }
-
-    private List<FigureListener> figureListeners;
-
 
     @Override
     public void draw(Graphics g) {
@@ -84,29 +74,4 @@ public class Line implements Figure {
     }
 
 
-    @Override
-    public List<FigureHandle> getHandles() {
-        return null;
-    }
-
-    @Override
-    public void addFigureListener(FigureListener listener) {
-        figureListeners.add(listener);
-    }
-
-    @Override
-    public void removeFigureListener(FigureListener listener) {
-        figureListeners.remove(listener);
-    }
-
-    @Override
-    public Figure clone() {
-        return null;
-    }
-
-    private void notifyObservers() {
-        for (FigureListener figureListener : figureListeners) {
-            figureListener.figureChanged(new FigureEvent(this));
-        }
-    }
 }
