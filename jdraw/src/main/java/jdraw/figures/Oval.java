@@ -35,12 +35,7 @@ public class Oval extends AbstractFigure {
 
     @Override
     public void setBounds(Point origin, Point corner) {
-        int height = origin.y - corner.y > 0 ? origin.y - corner.y : corner.y - origin.y;
-        int width = origin.x - corner.x > 0 ? origin.x - corner.x : corner.x - origin.x;
-        oval.x = origin.x;
-        oval.y = origin.y;
-        oval.width = width;
-        oval.height = height;
+        oval.setFrameFromDiagonal(origin.x, origin.y, corner.x, corner.y);
         notifyObservers();
     }
 
